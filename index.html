@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="shortcut icon"
+      href="https://e7.pngegg.com/pngimages/608/241/png-clipart-dwayne-johnson-the-rock-sideview-movies-the-rock.png"
+      type="image/png"
+    />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicios2</title>
+  </head>
+  <style>
+    body {
+      align-items: center;
+
+      margin: 0;
+      background-color: #8ec5fc;
+      background-image: linear-gradient(62deg, #8ec5fc 0%, #e0c3fc 100%);
+    }
+    button {
+      margin-left: 80px;
+      padding: 17px 40px;
+      border-radius: 10px;
+      border: 0;
+      background-color: rgb(255, 56, 86);
+      letter-spacing: 1.5px;
+      font-size: 15px;
+      transition: all 0.3s ease;
+      box-shadow: rgb(201, 46, 70) 0px 10px 0px 0px;
+      color: hsl(0, 0%, 100%);
+    }
+
+    button:hover {
+      box-shadow: rgb(201, 46, 70) 0px 7px 0px 0px;
+    }
+
+    button:active {
+      background-color: rgb(255, 56, 86);
+      /*50, 168, 80*/
+      box-shadow: rgb(201, 46, 70) 0px 0px 0px 0px;
+      transform: translateY(5px);
+      transition: 200ms;
+    }
+    h2 {
+      font-weight: bold;
+      font-family: Arial, sans-serif;
+      color: #333;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .card {
+      background: radial-gradient(
+          ellipse farthest-side at 76% 77%,
+          rgba(245, 228, 212, 0.25) 4%,
+          rgba(255, 255, 255, 0) calc(4% + 1px)
+        ),
+        radial-gradient(
+          circle at 76% 40%,
+          #fef6ec 4%,
+          rgba(255, 255, 255, 0) 4.18%
+        ),
+        linear-gradient(135deg, #ff0000 0%, #000036 100%),
+        radial-gradient(
+          ellipse at 28% 0%,
+          #ffcfac 0%,
+          rgba(98, 149, 144, 0.5) 100%
+        ),
+        linear-gradient(
+          180deg,
+          #cd6e8a 0%,
+          #f5eab0 69%,
+          #d6c8a2 70%,
+          #a2758d 100%
+        );
+      background-blend-mode: normal, normal, screen, overlay, normal;
+      box-shadow: 0px 0px 10px 1px #000000;
+      border-radius: 10px;
+      padding: 20px;
+      display: inline-block;
+    }
+
+    .content {
+      width: auto;
+    }
+
+    hr.style18 {
+      height: 30px;
+      border-style: solid;
+      border-color: #8c8b8b;
+      border-width: 1px 0 0 0;
+      border-radius: 20px;
+    }
+
+    hr.style18:before {
+      display: block;
+      content: "";
+      height: 30px;
+      margin-top: -31px;
+      border-style: solid;
+      border-color: #8c8b8b;
+      border-width: 0 0 1px 0;
+      border-radius: 20px;
+    }
+  </style>
+
+  <body>
+    <button onclick="ejercicio1()">Ejercicio 1</button>
+    <button onclick="ejercicio2()">Ejercicio 2</button>
+    <button onclick="ejercicio3()">Ejercicio 3</button>
+    <button onclick="ejercicio4()">Ejercicio 4</button>
+    <button onclick="ejercicio5()">Ejercicio 5</button>
+    <hr class="style18" />
+    <div class="card">
+      <div class="content">
+        <h2 id="resultado"></h2>
+      </div>
+    </div>
+
+    <script>
+      /* TODO: Ejercicio 1 */
+      function ejercicio1() {
+        var numeros = [];
+
+        while (true) {
+          var numero = prompt("Ingresa un número:");
+
+          if (numero === null) {
+            break;
+          }
+          if (isNaN(numero)) {
+            alert("Ingrese un número, que no lees?");
+            continue;
+          }
+          numeros.push(Number(numero));
+        }
+
+        var resultadoElemento = document.getElementById("resultado");
+
+        if (numeros.length > 0) {
+          var maximo = Math.max(...numeros);
+          resultadoElemento.textContent = "El número más grande es: " + maximo;
+        } else {
+          resultadoElemento.textContent = "No se ingresaron números";
+        }
+      }
+
+      /* TODO: Ejercicio 2 */
+      function ejercicio2() {
+        var texto = prompt("Ingresa una palabra o frase:");
+        var eliminarespaciositos = texto.replace(/\s/g, ""); //La s es un espacio de salto, es decír tabulaciones, espacios, saltos de lineas, etc y
+        //y la g es una "bandera", la cual remplaza toda las coincidencias de la cadena de texto que se ingresa.
+        var textoReverso = eliminarespaciositos.split("").reverse().join("");
+        var resultadoElemento = document.getElementById("resultado");
+
+        if (eliminarespaciositos === textoReverso) {
+          resultadoElemento.textContent = "Es un palíndromo uwu";
+        } else {
+          resultadoElemento.textContent = "No es un palíndromo :c";
+        }
+      }
+      /* TODO: Ejercicio 3 */
+      function ejercicio3() {
+        var suma = 0;
+
+        while (true) {
+          var numero = prompt("Ingresa un número:");
+          if (numero === null) {
+            break;
+          }
+          if (isNaN(numero)) {
+            alert("Ingrese un número, que no lees?");
+            continue;
+          }
+          suma += Number(numero);
+        }
+        var resultadoElemento = document.getElementById("resultado");
+        resultadoElemento.textContent = "La suma de los números es: " + suma;
+      }
+
+      /* TODO: Ejercicio 4 */
+      function ejercicio4() {
+        var rangoInicio = parseInt(
+          prompt("Ingresa el valor inicial del rango:")
+        );
+        var rangoFin = parseInt(prompt("Ingresa el valor final del rango:"));
+
+        var numeroAleatorio =
+          Math.floor(Math.random() * (rangoFin - rangoInicio + 1)) +
+          rangoInicio;
+
+        var resultadoElemento = document.getElementById("resultado");
+        resultadoElemento.textContent =
+          "El número aleatorio es: " + numeroAleatorio;
+      }
+      /* TODO: Ejercicio 5 */
+      function ejercicio5() {
+        var limite = parseInt(prompt("Ingresa un número:"));
+        var secuencia = [0, 1];
+
+        while (secuencia[secuencia.length - 1] <= limite) {
+          secuencia.push(
+            secuencia[secuencia.length - 1] + secuencia[secuencia.length - 2]
+          );
+        }
+        secuencia.pop();
+        var resultadoElemento = document.getElementById("resultado");
+        resultadoElemento.textContent =
+          "La secuencia de Fibonacci es: " + secuencia.join(", ");
+      }
+    </script>
+  </body>
+</html>
